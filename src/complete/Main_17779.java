@@ -1,10 +1,9 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class Main {
+public class Main_17779 {
 //    static int [] [] temp_board;
     static int mandering(int r, int c, int d1, int d2, int total, int N, int [] [] board) {
         int [] summation = new int [5];
