@@ -3,14 +3,14 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayDeque;
 
-class Unit {
+class Unit_1229 {
     int value, count;
-    Unit (int value, int count) {
+    Unit_1229(int value, int count) {
         this.value = value;
         this.count = count;
     }
 }
-public class Main {
+public class Main_1229 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -22,12 +22,12 @@ public class Main {
             coin[i] = coin[i-1] + i*4 + 1;
         }
 
-        ArrayDeque<Unit> q = new ArrayDeque<>();
-        q.offerLast(new Unit(0, 0));
+        ArrayDeque<Unit_1229> q = new ArrayDeque<>();
+        q.offerLast(new Unit_1229(0, 0));
         int [] count = new int [1_000_001];
         boolean [] check = new boolean [1_000_001];
         while (!q.isEmpty()) {
-            Unit u = q.pollFirst();
+            Unit_1229 u = q.pollFirst();
             for (int c : coin) {
                 if (c > N) break;
 //                System.out.println(u.value + " " + c);
@@ -39,7 +39,7 @@ public class Main {
                 if (check[u.value + c] && count[u.value + c] <= u.count + 1) continue;
                 check[u.value + c] = true;
                 count[u.value + c] = u.count + 1;
-                q.offerLast(new Unit(u.value + c, u.count + 1));
+                q.offerLast(new Unit_1229(u.value + c, u.count + 1));
             }
 //            System.out.println(Arrays.toString(count));
         }
